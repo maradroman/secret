@@ -77,7 +77,7 @@
     }
 
     if (!canAccess(currentStage)) {
-      const deniedUrl = new URL("access-denied.html", window.location.href);
+      const deniedUrl = new URL("/access-denied.html", window.location.origin);
       deniedUrl.searchParams.set("from", String(currentStage));
       window.location.replace(deniedUrl.href);
       return;

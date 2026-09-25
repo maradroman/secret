@@ -74,7 +74,7 @@
 
       if (isVisited && canOpen) {
         const link = document.createElement("a");
-        link.href = `case${stage}.html`;
+        link.href = `/case/${stage}/`;
         link.setAttribute("aria-label", `Відкрити ${stageNames[stage]} слід`);
         link.textContent = stageNumber;
         item.append(link);

@@ -766,6 +766,7 @@ h1 em {
 
 .denied-status span,
 .denied-action,
+.calendar-action,
 .noscript-warning {
   font-family: var(--display);
   font-size: 0.63rem;
@@ -784,7 +785,8 @@ h1 em {
   font-size: 0.75rem;
 }
 
-.denied-action {
+.denied-action,
+.calendar-action {
   display: inline-flex;
   align-items: center;
   align-self: flex-start;
@@ -798,22 +800,26 @@ h1 em {
   transition: color 160ms ease, background-color 160ms ease;
 }
 
-.denied-action span {
+.denied-action span,
+.calendar-action span {
   display: inline-block;
   margin-left: 0.5rem;
   transition: transform 160ms ease;
 }
 
-.denied-action:hover {
+.denied-action:hover,
+.calendar-action:hover {
   color: var(--text);
   background: transparent;
 }
 
-.denied-action:hover span {
+.denied-action:hover span,
+.calendar-action:hover span {
   transform: translateX(0.2rem);
 }
 
-.denied-action:focus-visible {
+.denied-action:focus-visible,
+.calendar-action:focus-visible {
   outline: 2px solid var(--accent-bright);
   outline-offset: 3px;
 }
@@ -876,7 +882,8 @@ h1 em {
     padding: 1.5rem 1.15rem;
   }
 
-  .denied-action {
+  .denied-action,
+  .calendar-action {
     width: 100%;
     justify-content: center;
   }
