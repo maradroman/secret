@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const revealAt = Date.UTC(2026, 9, 24, 21, 0, 0);
+  const revealAt = Date.UTC(2025, 9, 24, 21, 0, 0);
   let isChecking = false;
 
   const redirectIfRevealed = async () => {
