@@ -50,6 +50,7 @@
   const progressWarning = document.getElementById("progress-warning");
   const currentStage = Number.parseInt(document.documentElement.dataset.questStage, 10);
   const stageNames = ["", "перший", "другий", "третій"];
+  const stagePaths = ["", "/case/1f132fgdb/", "/case/2g542gfd/", "/case/3fdst534g/"];
 
   const updateStageNavigation = () => {
     document.querySelectorAll("[data-stage-link]").forEach((item) => {
@@ -74,7 +75,7 @@
 
       if (isVisited && canOpen) {
         const link = document.createElement("a");
-        link.href = `/case/${stage}/`;
+        link.href = stagePaths[stage];
         link.setAttribute("aria-label", `Відкрити ${stageNames[stage]} слід`);
         link.textContent = stageNumber;
         item.append(link);
