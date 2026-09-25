@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="uk" data-quest-stage="1">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0c0e">
+  <meta name="description" content="Перший слід детективної справи №042.">
+  <title>Справа №1 — Початок історії</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="quest-access.js"></script>
+  <script src="quest.js" defer></script>
+</head>
+<body>
+  <noscript><div class="noscript-warning">Для розслідування потрібно увімкнути JavaScript.</div></noscript>
+  <a class="skip-link" href="#main-content">Перейти до вмісту</a>
+
+  <main class="case-page" id="main-content">
+    <header class="topbar">
+      <div class="identity">
+        <p class="identity__series">HBD / CASE 042</p>
+        <p class="identity__classification">Особисте · Засекречено</p>
+      </div>
+      <ol class="stage-list" aria-label="Етап 1 з 3">
+        <li data-stage-link="1"><span class="stage-list__number">01</span></li>
+        <li data-stage-link="2"><span class="stage-list__number">02</span></li>
+        <li data-stage-link="3"><span class="stage-list__number">03</span></li>
+      </ol>
+    </header>
+
+    <article class="case-file" data-correct-answer="пляж">
+      <div class="case-file__meta">
+        <span>Досьє 042 / Лист 01</span>
+        <span class="case-file__authorization">Детектив <span class="redacted-name" role="img" aria-label="Ім’я М, решта засекречена"><span class="redacted-name__initial" aria-hidden="true">М</span><span class="redaction redaction--first" aria-hidden="true"></span></span> <span class="redacted-name" role="img" aria-label="По батькові Т, решта засекречено"><span class="redacted-name__initial" aria-hidden="true">Т</span><span class="redaction redaction--middle" aria-hidden="true"></span></span> <span class="redacted-name" role="img" aria-label="Прізвище Р, решта засекречено"><span class="redacted-name__initial" aria-hidden="true">Р</span><span class="redaction redaction--last" aria-hidden="true"></span></span> — засекречено · Допуск № 042 — авторизовано</span>
+      </div>
+
+      <header class="case-heading">
+        <p class="eyebrow">Перший слід</p>
+        <h1>Початок<br><em>історії</em></h1>
+        <div class="location-card location-card--classified">
+          <span>Геолокація</span>
+          <strong>Засекречено</strong>
+        </div>
+      </header>
+
+      <section class="evidence" aria-labelledby="evidence-title">
+        <div class="section-label">
+          <span>01</span>
+          <h2 id="evidence-title">Запис із місця події</h2>
+        </div>
+        <p class="riddle" id="riddle">Там, де океан береже більше таємниць, ніж може розповісти,<br>а вітер розносить слова далеко за обрій.<br><br>Колись на цьому березі пролунало питання,<br>на яке ти ще не встигла відповісти,<br>а хвилі, здається, вже знали відповідь.<br><br>Пісок став свідком миті, після якої наше «я»<br>назавжди перетворилося на «ми».<br><br>Одне слово.<br>Де це було?</p>
+      </section>
+
+      <form class="answer-form" id="quest-form" novalidate>
+        <div class="section-label">
+          <span>02</span>
+          <h2>Розшифруй слід</h2>
+        </div>
+
+        <label class="answer-label" for="answer">Твоя відповідь</label>
+        <div class="answer-controls">
+          <input id="answer" name="answer" type="text" placeholder="Твоя відповідь" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="32" aria-describedby="answer-hint">
+          <button id="submit" type="submit">Перевірити <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="input-hint" id="answer-hint">Одне слово. Регістр не має значення.</p>
+        <p class="feedback feedback--error" id="error" role="alert" hidden>Не той слід. Спробуй ще раз.</p>
+      </form>
+
+      <section class="result" id="result" aria-labelledby="result-title" tabindex="-1" hidden>
+        <div class="result__header">
+          <div>
+            <p class="eyebrow" id="result-title">Слід підтверджено</p>
+            <h2>Правильно!</h2>
+          </div>
+          <div class="stamp stamp--solved" aria-hidden="true">Solved</div>
+        </div>
+
+        <div class="digit-card">
+          <span>Перша цифра коду</span>
+          <strong id="digit">3</strong>
+        </div>
+
+        <div class="next-clue">
+          <span>Наступний слід</span>
+          <p>Шукай його там, де пахне фарбою і чути звук дрилі.</p>
+        </div>
+
+        <p class="feedback feedback--warning" id="progress-warning" role="alert" hidden>Відповідь правильна, але браузер не зберіг прогрес. Перевірте дозволи на збереження даних і спробуйте ще раз.</p>
+      </section>
+
+      <footer class="case-file__footer">
+        <span>HBD / 042 / 01</span>
+        <span>Збережи власну версію</span>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>
