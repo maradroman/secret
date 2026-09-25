@@ -35,20 +35,8 @@
     return levenshtein(normalizedInput, normalizedAnswer) <= maxDistance;
   };
 
-  const caseFile = document.querySelector("[data-correct-answer]");
-
-  if (!caseFile) {
-    return;
-  }
-
-  const form = document.getElementById("quest-form");
-  const answer = document.getElementById("answer");
-  const submit = document.getElementById("submit");
-  const error = document.getElementById("error");
-  const result = document.getElementById("result");
-  const digit = document.getElementById("digit");
-  const progressWarning = document.getElementById("progress-warning");
   const currentStage = Number.parseInt(document.documentElement.dataset.questStage, 10);
+  const isHomePage = !Number.isInteger(currentStage);
   const stageNames = ["", "перший", "другий", "третій"];
   const stagePaths = ["", "/case/1f132fgdb/", "/case/2g542gfd/", "/case/3fdst534g/"];
 
@@ -59,6 +47,7 @@
       const isSolved = window.QuestAccess?.isSolved(stage) === true;
       const isVisited = window.QuestAccess?.isVisited(stage) === true;
       const canOpen = window.QuestAccess?.canAccess(stage) === true;
+      const canNavigate = isVisited || (isHomePage && stage === 1);
       const stageNumber = String(stage).padStart(2, "0");
 
       item.classList.toggle("is-complete", isSolved);
@@ -73,7 +62,7 @@
 
       item.replaceChildren();
 
-      if (isVisited && canOpen) {
+      if (canOpen && canNavigate) {
         const link = document.createElement("a");
         link.href = stagePaths[stage];
         link.setAttribute("aria-label", `Відкрити ${stageNames[stage]} слід`);
@@ -88,6 +77,21 @@
     });
   };
 
+  updateStageNavigation();
+
+  const caseFile = document.querySelector("[data-correct-answer]");
+
+  if (!caseFile) {
+    return;
+  }
+
+  const form = document.getElementById("quest-form");
+  const answer = document.getElementById("answer");
+  const submit = document.getElementById("submit");
+  const error = document.getElementById("error");
+  const result = document.getElementById("result");
+  const digit = document.getElementById("digit");
+  const progressWarning = document.getElementById("progress-warning");
   const showSolvedResult = ({ focus = false, hideForm = true } = {}) => {
     result.hidden = false;
     form.hidden = hideForm;
@@ -99,8 +103,6 @@
       result.focus();
     }
   };
-
-  updateStageNavigation();
 
   if (window.QuestAccess?.isSolved(currentStage)) {
     progressWarning.hidden = true;
