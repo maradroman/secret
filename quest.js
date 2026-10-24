@@ -38,7 +38,7 @@
   const currentStage = Number.parseInt(document.documentElement.dataset.questStage, 10);
   const isHomePage = !Number.isInteger(currentStage);
   const stageNames = ["", "перший", "другий", "третій"];
-  const stagePaths = ["", "/case/1f132fgdb/", "/case/2g542gfd/", "/case/3fdst534g/"];
+  const stagePaths = ["", "/case/1f132fgdb/", "/case/3fdst534g/", "/case/2g542gfd/"];
 
   const updateStageNavigation = () => {
     document.querySelectorAll("[data-stage-link]").forEach((item) => {
